@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="reproductor-musica">
+        <h1 id="tituloCancion">Título</h1>
+        <p id="nombreArtista">Artista</p>
+        <audio id="cancion">
+            <source src="" type="audio/mpeg">
+        </audio>
+        <input type="range" value="0" id="progreso" min="0" max="100" step="0.1">
+        
+        <div class="controles">
+            <button class="atras control" title="Canción anterior">
+                <i class="bi bi-rewind-fill"></i>
+            </button>
+            <button class="boton-reproducir-pausar iconoControl" title="Reproducir/Pausar">
+                <i class="bi bi-play-fill" id="iconoControl"></i>
+            </button>
+            <button class="adelante control" title="Siguiente canción">
+                <i class="bi bi-fast-forward-fill"></i>
+            </button>
+        </div>
+        
+        <div class="gestion-canciones">
+            <input type="text" id="nuevoTitulo" placeholder="Título" class="input-cancion">
+            <input type="text" id="nuevoArtista" placeholder="Artista" class="input-cancion">
+            
+            <div class="file-upload">
+                <label for="archivoCancion" class="file-label">
+                    <i class="bi bi-file-music"></i> Seleccionar archivo MP3
+                </label>
+                <input type="file" id="archivoCancion" accept=".mp3,audio/*" style="display: none;">
+                <span id="nombreArchivo">No se ha seleccionado archivo</span>
+            </div>
+            
+            <div class="botones-gestion">
+                <button id="agregarInicio" class="boton-gestion" title="Agregar al inicio">
+                    <i class="bi bi-plus-circle"></i> Inicio
+                </button>
+                <button id="agregarFinal" class="boton-gestion" title="Agregar al final">
+                    <i class="bi bi-plus-circle"></i> Final
+                </button>
+                <button id="eliminarActual" class="boton-gestion" title="Eliminar actual">
+                    <i class="bi bi-trash"></i> Eliminar
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <script src="index.js"></script>
+</body>
+</html>
